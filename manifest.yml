@@ -1,0 +1,12 @@
+---
+applications:
+  - name: config-client-demo
+    random-route: true
+    path: build/libs/config-client-demo-0.0.1-SNAPSHOT.jar
+    instances: 1
+    memory: 1G
+    services:
+      - config-server
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+}}'
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
